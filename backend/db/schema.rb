@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_25_162803) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_25_163308) do
+  create_table "photos", force: :cascade do |t|
+    t.string "caption"
+    t.datetime "created_at", null: false
+    t.text "image_url", null: false
+    t.integer "post_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_photos_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "post_text", null: false
@@ -18,4 +27,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_25_162803) do
     t.string "title", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "photos", "posts"
 end
