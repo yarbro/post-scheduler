@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 export default function useFetch(fetchFn) {
   const [data, setData] = useState({ data: null, loading: true, error: null })

@@ -1,14 +1,14 @@
-import { getPosts } from "../api"
-import useFetch from "../hooks/useFetch"
-import Spinner from "./shared/Spinner"
-import ErrorMessage from "./shared/ErrorMessage"
-import PostCard from "./PostCard"
+import { getPosts } from '../api'
+import useFetch from '../hooks/useFetch'
+import Spinner from './shared/Spinner'
+import ErrorMessage from './shared/ErrorMessage'
+import PostCard from './PostCard'
 
 export default function PostList() {
   const { data: posts, loading, error } = useFetch(getPosts)
 
   return (
-    <div className="max-w-5xl mx-auto p-4">
+    <>
       <title>Post Scheduler</title>
 
       {loading && <Spinner />}
@@ -31,6 +31,6 @@ export default function PostList() {
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
