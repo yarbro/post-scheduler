@@ -3,9 +3,13 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+one:
+  title: "First Post"
+  post_text: "This is the first post."
+  scheduled_date: 2026-05-01 09:00:00
+
+two:
+  title: "Second Post"
+  post_text: "This is the second post."
+  scheduled_date: 2026-05-10 12:00:00
