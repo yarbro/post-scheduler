@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { getPost } from '../api'
+import { formatDate } from '../utils'
 import useFetch from '../hooks/useFetch'
 import PhotoList from './PhotoList'
 import Spinner from './shared/Spinner'
@@ -27,7 +28,7 @@ export default function PostDetail() {
             {post.scheduled_date && (
               <div className="flex items-center gap-1 mb-5 text-sm text-gray-700">
                 <span className="font-medium">Scheduled Date:</span>
-                <span>{post.scheduled_date}</span>
+                <span>{formatDate(post.scheduled_date)}</span>
               </div>
             )}
 

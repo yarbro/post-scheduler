@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { formatDate } from '../utils'
 import PhotoList from './PhotoList'
 
 export default function PostCard({ post }) {
@@ -16,7 +17,7 @@ export default function PostCard({ post }) {
       {post.scheduled_date && (
         <div className="flex items-center gap-1 text-sm text-gray-700 mb-4">
           <span className="font-medium">Scheduled Date:</span>
-          <span>{post.scheduled_date}</span>
+          <span>{formatDate(post.scheduled_date)}</span>
         </div>
       )}
 
